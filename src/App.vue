@@ -1,5 +1,10 @@
 <template>
   <div>
+    <SearchPokemon
+      @search="updateSearch"
+      :search-name="pokemonName"
+    ></SearchPokemon>
+
     <PokemonItem
       v-for="pokemon in pokemonList"
       :key="pokemon"
@@ -17,6 +22,7 @@
 import { ref, computed, onMounted } from "vue";
 import axios from "axios";
 import PokemonItem from "./components/PokemonItem.vue";
+import SearchPokemon from "./components/SearchPokemon.vue";
 
 const pokemonName = ref("");
 
@@ -25,6 +31,10 @@ function filterPokemon() {
   return pokedex.value.filter((p) =>
     p.name.toLowerCase().includes(pokemon.toLowerCase())
   );
+}
+
+function updateSearch(value) {
+  pokemonName.value = value;
 }
 
 const pokemonList = computed(() => {
