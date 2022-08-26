@@ -1,15 +1,22 @@
 <template>
-  <div v-for="pokemon in pokemonList" :key="pokemon">
-    <img :src="pokemon.img" :alt="pokemon.name" />
-    <p>{{ pokemon.name }}</p>
-    <p>{{ pokemon.type }}</p>
-    <p>{{ pokemon.attacks }}</p>
+  <div>
+    <PokemonItem
+      v-for="pokemon in pokemonList"
+      :key="pokemon"
+      :id="pokemon.id"
+      :img="pokemon.img"
+      :name="pokemon.name"
+      :type="pokemon.type"
+      :attacks="pokemon.attacks"
+    >
+    </PokemonItem>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import axios from "axios";
+import PokemonItem from "./components/PokemonItem.vue";
 
 const pokemonName = ref("");
 
