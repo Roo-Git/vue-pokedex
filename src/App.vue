@@ -4,7 +4,7 @@
       @search="updateSearch"
       :search-name="pokemonName"
     ></SearchPokemon>
-
+    <FilterPokemon @change-filter="setFilters"></FilterPokemon>
     <PokemonItem
       v-for="pokemon in pokemonList"
       :key="pokemon"
@@ -23,18 +23,55 @@ import { ref, computed, onMounted } from "vue";
 import axios from "axios";
 import PokemonItem from "./components/PokemonItem.vue";
 import SearchPokemon from "./components/SearchPokemon.vue";
+import FilterPokemon from "./components/FilterPokemon.vue";
 
 const pokemonName = ref("");
+let activeTypes = ref({
+  grass: true,
+  fire: true,
+  water: true,
+  bug: true,
+  normal: true,
+  electric: true,
+  poison: true,
+});
 
 function filterPokemon() {
   let pokemon = pokemonName.value;
-  return pokedex.value.filter((p) =>
-    p.name.toLowerCase().includes(pokemon.toLowerCase())
-  );
+  return pokedex.value
+    .filter((p) => p.name.toLowerCase().includes(pokemon.toLowerCase()))
+    .filter((p) => {
+      if (activeTypes.value.grass && p.type.includes("grass")) {
+        return true;
+      }
+      if (activeTypes.value.fire && p.type.includes("fire")) {
+        return true;
+      }
+      if (activeTypes.value.water && p.type.includes("water")) {
+        return true;
+      }
+      if (activeTypes.value.bug && p.type.includes("bug")) {
+        return true;
+      }
+      if (activeTypes.value.normal && p.type.includes("normal")) {
+        return true;
+      }
+      if (activeTypes.value.electric && p.type.includes("electric")) {
+        return true;
+      }
+      if (activeTypes.value.poison && p.type.includes("poison")) {
+        return true;
+      }
+      return false;
+    });
 }
 
 function updateSearch(value) {
   pokemonName.value = value;
+}
+
+function setFilters(updatedFilters) {
+  activeTypes.value = updatedFilters;
 }
 
 const pokemonList = computed(() => {
