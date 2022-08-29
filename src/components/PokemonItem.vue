@@ -1,8 +1,10 @@
 <template>
   <div>
-    <img :src="props.img" :alt="props.name" />
-    <h2>{{ props.name }}</h2>
-    <BaseBadge :type="type" :title="type"></BaseBadge>
+    <BaseCard :type="type">
+      <img :src="props.img" :alt="props.name" />
+      <h2>{{ props.name }}</h2>
+      <BaseBadge :type="type" :title="type" />
+    </BaseCard>
   </div>
 </template>
 
