@@ -1,4 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import BaseBadge from "./components/UI/BaseBadge.vue";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+
+app.component("BaseBadge", BaseBadge);
+
+app.mount("#app");

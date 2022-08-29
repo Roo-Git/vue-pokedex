@@ -2,10 +2,7 @@
   <div>
     <img :src="props.img" :alt="props.name" />
     <h2>{{ props.name }}</h2>
-    <h2>{{ props.type }}</h2>
-    <li>
-      {{ props.attacks }}
-    </li>
+    <BaseBadge :type="type" :title="type"></BaseBadge>
   </div>
 </template>
 
