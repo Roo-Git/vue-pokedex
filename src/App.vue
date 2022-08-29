@@ -15,6 +15,7 @@
       :attacks="pokemon.attacks"
     >
     </PokemonItem>
+    <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import axios from "axios";
 import PokemonItem from "./components/PokemonItem.vue";
 import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
+import NotFoundPokemon from "./components/NotFoundPokemon.vue";
 
 const pokemonName = ref("");
 let activeTypes = ref({
@@ -76,6 +78,10 @@ function setFilters(updatedFilters) {
 
 const pokemonList = computed(() => {
   return filterPokemon();
+});
+
+const NotFound = computed(() => {
+  return pokemonList.value.length === 0;
 });
 
 const pokedex = ref([]);
