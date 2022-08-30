@@ -5,17 +5,19 @@
       :search-name="pokemonName"
     ></SearchPokemon>
     <FilterPokemon @change-filter="setFilters"></FilterPokemon>
-    <PokemonItem
-      v-for="pokemon in pokemonList"
-      :key="pokemon"
-      :id="pokemon.id"
-      :img="pokemon.img"
-      :name="pokemon.name"
-      :type="pokemon.type"
-      :attacks="pokemon.attacks"
-    >
-    </PokemonItem>
-    <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
+    <BaseContainer>
+      <PokemonItem
+        v-for="pokemon in pokemonList"
+        :key="pokemon"
+        :id="pokemon.id"
+        :img="pokemon.img"
+        :name="pokemon.name"
+        :type="pokemon.type"
+        :attacks="pokemon.attacks"
+      >
+      </PokemonItem>
+      <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
+    </BaseContainer>
   </div>
 </template>
 
@@ -26,6 +28,7 @@ import PokemonItem from "./components/PokemonItem.vue";
 import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
 import NotFoundPokemon from "./components/NotFoundPokemon.vue";
+import BaseContainer from "./components/UI/BaseContainer.vue";
 
 const pokemonName = ref("");
 let activeTypes = ref({
