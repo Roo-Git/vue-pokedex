@@ -5,7 +5,29 @@
       :search-name="pokemonName"
     ></SearchPokemon>
     <FilterPokemon @change-filter="setFilters"></FilterPokemon>
-    <BaseContainer>
+    <BaseContainer
+      class="grid grid-cols-2 grid-rows-3 gap-10 w-100 bg-stone-200 rounded-3xl m-2 p-6"
+    >
+      <h1
+        class="flex justify-center items-center col-span-1 row-span-1 text-black-50 text-3xl font-bold tracking-wide"
+      >
+        POKEDEX
+      </h1>
+      <img
+        class="col-span-1 row-span-2"
+        src="./assets/img/pokeball.svg"
+        alt="pokeball"
+      />
+      <BaseButton
+        class="flex w-50 m-3 col-span-1 row-span-1 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-110 hover:bg-red-500"
+      >
+        Change filter
+      </BaseButton>
+      <div class="bg-red-200 col-span-2 row-span-1">Components</div>
+    </BaseContainer>
+    <BaseContainer
+      class="grid grid-cols-2 grid-rows-2 gap-1 w-100 bg-stone-100 rounded-3xl m-2 p-6"
+    >
       <PokemonItem
         v-for="pokemon in pokemonList"
         :key="pokemon"
