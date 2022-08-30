@@ -1,5 +1,11 @@
 <template>
-  <span class="badge" :class="props.type">{{ text }}</span>
+  <div>
+    <span
+      class="flex w-20 justify-center rounded-2xl text-neutral-50 my-2"
+      :class="props.type"
+      >{{ text }}
+    </span>
+  </div>
 </template>
 
 <script setup>
@@ -12,42 +18,27 @@ let text = computed(() => {
 </script>
 
 <style scoped>
-.badge {
-  background-color: #ccc;
-  color: #252525;
-  border-radius: 30px;
-  padding: 0.5rem 1.5rem;
-  display: inline-block;
-}
-
 .grass {
-  background-color: green;
-  color: white;
+  background-color: #86efac;
 }
 
 .fire {
-  background-color: red;
-  color: white;
+  background-color: #fca5a5;
 }
 
 .water {
-  background-color: blue;
-  color: white;
+  background-color: #93c5fd;
 }
 .bug {
-  background-color: greenyellow;
-  color: white;
+  background-color: #bef264;
 }
 .normal {
-  background-color: orange;
-  color: white;
+  background-color: #fdba74;
 }
 .electric {
-  background-color: yellow;
-  color: white;
+  background-color: #fde047;
 }
 .poison {
-  background-color: purple;
-  color: white;
+  background-color: #d8b4fe;
 }
 </style>
