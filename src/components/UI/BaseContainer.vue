@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="grid grid-cols-2 grid-rows-2 gap-1 w-100 bg-stone-100 rounded-3xl m-2 p-6"
-  >
+  <div>
     <slot></slot>
   </div>
 </template>
