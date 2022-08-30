@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Find by Type</h2>
+    <h2 class="text-cyan-600">Find by Type</h2>
     <span>
       <input type="checkbox" id="grass" checked @change="setFilter" />
       <label for="grass">Grass</label>
