@@ -4,7 +4,7 @@
       class="flex w-40 justify-center items-center text-neutral-50 font-bold rounded-2xl my-2"
       :class="props.type"
     >
-      {{ text }}
+      <slot> {{ text }} </slot>
     </button>
   </div>
 </template>
