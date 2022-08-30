@@ -1,5 +1,8 @@
 <template>
-  <div class="card" :class="props.type">
+  <div
+    class="flex flex-col w-100 justify-around items-center rounded-3xl m-2"
+    :class="props.type"
+  >
     <slot></slot>
   </div>
 </template>
@@ -9,38 +12,27 @@ const props = defineProps(["type"]);
 </script>
 
 <style scoped>
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 2rem auto;
-  max-width: 13rem;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-}
 .grass {
-  border: 4px solid green;
+  background-color: #4ade80;
 }
 
 .fire {
-  border: 4px solid red;
+  background-color: #f87171;
 }
 
 .water {
-  border: 4px solid blue;
+  background-color: #60a5fa;
 }
 .bug {
-  border: 4px solid greenyellow;
+  background-color: #a3e635;
 }
 .normal {
-  border: 4px solid orange;
+  background-color: #fb923c;
 }
 .electric {
-  border: 4px solid yellow;
+  background-color: #facc15;
 }
 .poison {
-  border: 4px solid purple;
+  background-color: #e879f9;
 }
 </style>
