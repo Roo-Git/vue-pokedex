@@ -1,6 +1,7 @@
 <template>
   <div>
     <input
+      class="placeholder:uppercase w-42 px-10 py-2 rounded outline-none"
       type="search"
       @input="search"
       :value="searchName"

@@ -1,25 +1,27 @@
 <template>
   <div>
     <BaseContainer
-      class="grid grid-cols-2 grid-rows-3 gap-10 w-100 bg-stone-200 rounded-3xl m-2 p-6"
+      class="grid grid-cols-3 grid-rows-3 gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
     >
       <h1
-        class="flex justify-center items-center col-span-1 row-span-1 text-black-50 text-3xl font-bold tracking-wide"
+        class="grid items-center text-red-600 text-3xl font-bold tracking-wide w-full col-span-2"
       >
-        POKEDEX
+        POKEDEX APP
       </h1>
       <img
-        class="col-span-1 row-span-2"
         src="./assets/img/pokeball.svg"
         alt="pokeball"
+        class="grid justify-center items-center w-full"
       />
       <BaseButton
         @click="changeFilter"
-        class="flex w-50 m-3 col-span-1 row-span-1 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-110 hover:bg-red-500"
+        class="grid justify-center items-center w-full h-28 col-span-3 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-90 hover:bg-red-500"
       >
-        Change filter
+        Change Filter
       </BaseButton>
-      <div class="bg-red-200 col-span-2 row-span-1">
+      <div
+        class="grid justify-center items-center w-full h-28 col-span-3 border-2 border-red-500 rounded"
+      >
         <SearchPokemon
           @search="updateSearch"
           :search-name="pokemonName"
@@ -32,7 +34,7 @@
       </div>
     </BaseContainer>
     <BaseContainer
-      class="grid grid-cols-2 grid-rows-2 gap-1 w-100 bg-stone-100 rounded-3xl m-2 p-6"
+      class="grid grid-cols-2 grid-rows-2 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6"
     >
       <PokemonItem
         v-for="pokemon in pokemonList"
@@ -57,6 +59,7 @@ import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
 import NotFoundPokemon from "./components/NotFoundPokemon.vue";
 import BaseContainer from "./components/UI/BaseContainer.vue";
+import BaseButton from "./components/UI/BaseButton.vue";
 
 const pokemonName = ref("");
 let activeTypes = ref({

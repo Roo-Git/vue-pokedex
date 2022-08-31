@@ -1,32 +1,70 @@
 <template>
-  <div>
-    <h2 class="text-cyan-600">Find by Type</h2>
+  <div class="grid grid-cols-3 grid-rows-4 w-96 p-2">
+    <h2 class="grid col-span-3 text-black-50 font-bold tracking-wide ml-1">
+      Find by Type:
+    </h2>
     <span>
-      <input type="checkbox" id="grass" checked @change="setFilter" />
+      <input
+        class="m-1"
+        type="checkbox"
+        id="grass"
+        checked
+        @change="setFilter"
+      />
       <label for="grass">Grass</label>
     </span>
     <span>
-      <input type="checkbox" id="fire" checked @change="setFilter" />
+      <input
+        class="m-1"
+        type="checkbox"
+        id="fire"
+        checked
+        @change="setFilter"
+      />
       <label for="fire">Fire</label>
     </span>
     <span>
-      <input type="checkbox" id="water" checked @change="setFilter" />
+      <input
+        class="m-1"
+        type="checkbox"
+        id="water"
+        checked
+        @change="setFilter"
+      />
       <label for="water">Water</label>
     </span>
     <span>
-      <input type="checkbox" id="bug" checked @change="setFilter" />
+      <input class="m-1" type="checkbox" id="bug" checked @change="setFilter" />
       <label for="bug">Bug</label>
     </span>
     <span>
-      <input type="checkbox" id="normal" checked @change="setFilter" />
+      <input
+        class="m-1"
+        type="checkbox"
+        id="normal"
+        checked
+        @change="setFilter"
+      />
       <label for="normal">Normal</label>
     </span>
     <span>
-      <input type="checkbox" id="electric" checked @change="setFilter" />
+      <input
+        class="m-1"
+        type="checkbox"
+        id="electric"
+        checked
+        @change="setFilter"
+      />
       <label for="electric">Electric</label>
     </span>
     <span>
-      <input type="checkbox" id="poison" checked @change="setFilter" />
+      <input
+        class="m-1"
+        type="checkbox"
+        id="poison"
+        checked
+        @change="setFilter"
+      />
       <label for="poison">Poison</label>
     </span>
   </div>
