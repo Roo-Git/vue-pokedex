@@ -1,10 +1,5 @@
 <template>
   <div>
-    <SearchPokemon
-      @search="updateSearch"
-      :search-name="pokemonName"
-    ></SearchPokemon>
-    <FilterPokemon @change-filter="setFilters"></FilterPokemon>
     <BaseContainer
       class="grid grid-cols-2 grid-rows-3 gap-10 w-100 bg-stone-200 rounded-3xl m-2 p-6"
     >
@@ -19,11 +14,22 @@
         alt="pokeball"
       />
       <BaseButton
+        @click="changeFilter"
         class="flex w-50 m-3 col-span-1 row-span-1 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-110 hover:bg-red-500"
       >
         Change filter
       </BaseButton>
-      <div class="bg-red-200 col-span-2 row-span-1">Components</div>
+      <div class="bg-red-200 col-span-2 row-span-1">
+        <SearchPokemon
+          @search="updateSearch"
+          :search-name="pokemonName"
+          v-show="activeComponent === true"
+        ></SearchPokemon>
+        <FilterPokemon
+          @change-filter="setFilters"
+          v-show="activeComponent === false"
+        ></FilterPokemon>
+      </div>
     </BaseContainer>
     <BaseContainer
       class="grid grid-cols-2 grid-rows-2 gap-1 w-100 bg-stone-100 rounded-3xl m-2 p-6"
@@ -108,6 +114,12 @@ const pokemonList = computed(() => {
 const NotFound = computed(() => {
   return pokemonList.value.length === 0;
 });
+
+const activeComponent = ref(true);
+
+function changeFilter() {
+  activeComponent.value = !activeComponent.value;
+}
 
 const pokedex = ref([]);
 const URL_API = ref("https://pokeapi.co/api/v2/pokemon/");
