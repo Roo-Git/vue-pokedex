@@ -41,9 +41,12 @@
         :key="pokemon"
         :id="pokemon.id"
         :img="pokemon.img"
+        :dream-img="pokemon.dreamImg"
         :name="pokemon.name"
         :type="pokemon.type"
         :attacks="pokemon.attacks"
+        :height="pokemon.height"
+        :weight="pokemon.weight"
       >
       </PokemonItem>
       <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
@@ -135,11 +138,14 @@ onMounted(() => {
         let pokemon = {
           id: response.data.id,
           img: response.data.sprites.front_default,
+          dreamImg: response.data.sprites.other.dream_world.front_default,
           name: response.data.name.toUpperCase(),
           type: response.data.types[0].type.name,
+          height: response.data.height,
+          weight: response.data.weight,
           attacks:
             response.data.abilities[0].ability.name.charAt(0).toUpperCase() +
-            response.data.abilities[0].ability.name.slice(1),
+            response.data.abilities[1]?.ability.name.slice(1),
         };
         pokedex.value.push(pokemon);
       })

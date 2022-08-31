@@ -1,7 +1,7 @@
 <template>
   <div v-if="props.open" class="backdrop" @click="closeDialog"></div>
   <transition name="modal">
-    <dialog open v-if="props.open">
+    <dialog open v-if="props.open" :class="props.type">
       <slot></slot>
     </dialog>
   </transition>
@@ -11,6 +11,9 @@ const props = defineProps({
   open: {
     type: Boolean,
     required: true,
+  },
+  type: {
+    type: String,
   },
 });
 
@@ -34,17 +37,16 @@ function closeDialog() {
 
 dialog {
   position: fixed;
-  top: 30vh;
-  width: 30rem;
-  left: calc(50% - 15rem);
-  margin: 0;
+  top: 10vh;
+  width: 25rem;
+  height: 40rem;
+  margin: 0 auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
   padding: 1rem;
   background-color: white;
   z-index: 100;
   border: none;
-  /* animation: modal 0.4s ease-out forwards; */
 }
 
 .modal-enter-active {
@@ -65,5 +67,29 @@ dialog {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+.grass {
+  background-color: #86efac;
+}
+
+.fire {
+  background-color: #fca5a5;
+}
+
+.water {
+  background-color: #93c5fd;
+}
+.bug {
+  background-color: #bef264;
+}
+.normal {
+  background-color: #fdba74;
+}
+.electric {
+  background-color: #fde047;
+}
+.poison {
+  background-color: #d8b4fe;
 }
 </style>
