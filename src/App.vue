@@ -1,18 +1,9 @@
 <template>
   <div>
+    <TheHeader></TheHeader>
     <BaseContainer
       class="grid grid-cols-3 grid-rows-3 gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
     >
-      <h1
-        class="grid items-center text-red-600 text-3xl font-bold tracking-wide w-full col-span-2"
-      >
-        POKEDEX APP
-      </h1>
-      <img
-        src="./assets/img/pokeball.svg"
-        alt="pokeball"
-        class="grid justify-center items-center w-full"
-      />
       <BaseButton
         @click="changeFilter"
         class="grid justify-center items-center w-full h-28 col-span-3 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-90 hover:bg-red-500"
@@ -63,6 +54,7 @@ import FilterPokemon from "./components/FilterPokemon.vue";
 import NotFoundPokemon from "./components/NotFoundPokemon.vue";
 import BaseContainer from "./components/UI/BaseContainer.vue";
 import BaseButton from "./components/UI/BaseButton.vue";
+import TheHeader from "./components/layouts/TheHeader.vue";
 
 const pokemonName = ref("");
 let activeTypes = ref({
