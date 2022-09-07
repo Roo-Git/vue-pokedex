@@ -23,7 +23,7 @@
       </div>
     </BaseContainer>
     <BaseContainer
-      class="grid grid-cols-2 grid-rows-2 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6"
+      class="grid grid-cols-2 grid-rows-2 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7"
     >
       <PokemonItem
         v-for="pokemon in pokemonList"
