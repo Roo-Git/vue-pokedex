@@ -8,7 +8,7 @@
     <dialog
       open
       v-if="props.open"
-      class="fixed top-60 w-[26rem] h-[40rem] m-auto rounded-2xl p-4 z-50"
+      class="fixed top-60 w-[26rem] rounded-2xl z-50"
       :class="props.type"
     >
       <slot></slot>
