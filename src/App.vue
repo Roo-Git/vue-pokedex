@@ -2,16 +2,16 @@
   <div>
     <TheHeader></TheHeader>
     <BaseContainer
-      class="grid grid-cols-3 grid-rows-3 gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
+      class="flex flex-col gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
     >
       <BaseButton
         @click="changeFilter"
-        class="grid justify-center items-center w-full h-28 col-span-3 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-90 hover:bg-red-500"
+        class="flex justify-center items-center w-full h-14 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-90 hover:bg-red-500"
       >
         Change Filter
       </BaseButton>
       <div
-        class="grid justify-center items-center w-full h-28 col-span-3 border-2 border-red-500 rounded"
+        class="flex justify-center items-center w-full h-28 border-2 border-red-500 rounded"
       >
         <SearchPokemon
           @search="updateSearch"
