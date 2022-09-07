@@ -1,11 +1,11 @@
 <template>
   <div class="grid grid-cols-3 grid-rows-4 w-96 p-2">
-    <h2 class="grid col-span-3 text-black-50 font-bold tracking-wide ml-1">
+    <h2 class="grid col-span-3 text-black-50 font-bold tracking-wide ml-2">
       Find by Type:
     </h2>
     <span>
       <input
-        class="m-1"
+        class="m-2"
         type="checkbox"
         id="grass"
         checked
@@ -15,7 +15,7 @@
     </span>
     <span>
       <input
-        class="m-1"
+        class="m-2"
         type="checkbox"
         id="fire"
         checked
@@ -25,7 +25,7 @@
     </span>
     <span>
       <input
-        class="m-1"
+        class="m-2"
         type="checkbox"
         id="water"
         checked
@@ -34,12 +34,12 @@
       <label for="water">Water</label>
     </span>
     <span>
-      <input class="m-1" type="checkbox" id="bug" checked @change="setFilter" />
+      <input class="m-2" type="checkbox" id="bug" checked @change="setFilter" />
       <label for="bug">Bug</label>
     </span>
     <span>
       <input
-        class="m-1"
+        class="m-2"
         type="checkbox"
         id="normal"
         checked
@@ -49,7 +49,7 @@
     </span>
     <span>
       <input
-        class="m-1"
+        class="m-2"
         type="checkbox"
         id="electric"
         checked
@@ -59,7 +59,7 @@
     </span>
     <span>
       <input
-        class="m-1"
+        class="m-2"
         type="checkbox"
         id="poison"
         checked
