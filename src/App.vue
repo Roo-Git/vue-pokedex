@@ -2,15 +2,15 @@
   <div>
     <TheHeader></TheHeader>
     <BaseContainer
-      class="flex flex-col gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
+      class="flex flex-col items-center gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
     >
       <BaseButton
         @click="changeFilter"
-        class="flex justify-center items-center w-full h-14 text-white bg-red-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-90 hover:bg-red-500"
+        class="flex justify-center items-center w-[350px] h-14 text-white bg-red-500 rounded hover:bg-red-600 cursor-pointer"
       >
         Change Filter
       </BaseButton>
-      <div class="flex justify-center items-center w-full h-28">
+      <div class="flex justify-center items-center w-[350px] h-28">
         <SearchPokemon
           @search="updateSearch"
           :search-name="pokemonName"
