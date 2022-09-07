@@ -10,9 +10,7 @@
       >
         Change Filter
       </BaseButton>
-      <div
-        class="flex justify-center items-center w-full h-28 border-2 border-red-500 rounded"
-      >
+      <div class="flex justify-center items-center w-full h-28">
         <SearchPokemon
           @search="updateSearch"
           :search-name="pokemonName"
