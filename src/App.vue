@@ -13,7 +13,7 @@
       <div class="flex justify-center items-center w-[350px] h-28">
         <SearchPokemon
           @search="updateSearch"
-          :search-name="pokemonName"
+          :search-name="search"
           v-show="activeComponent === true"
         ></SearchPokemon>
         <FilterPokemon
@@ -29,6 +29,7 @@
         v-for="pokemon in pokedex"
         :key="pokemon.name"
         :name="pokemon.name"
+        :search="search"
       />
       <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
     </BaseContainer>
@@ -46,7 +47,7 @@ import BaseButton from "./components/UI/BaseButton.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
 import PokemonContainer from "./components/PokemonContainer.vue";
 
-const pokemonName = ref("");
+const search = ref("");
 let activeTypes = ref({
   grass: true,
   fire: true,
@@ -88,16 +89,12 @@ let activeTypes = ref({
 // }
 
 function updateSearch(value) {
-  pokemonName.value = value;
+  search.value = value;
 }
 
 function setFilters(updatedFilters) {
   activeTypes.value = updatedFilters;
 }
-
-// const pokemonList = computed(() => {
-//   return filterPokemon();
-// });
 
 const NotFound = computed(() => {
   return pokedex.value.length === 0;
