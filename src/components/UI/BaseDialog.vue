@@ -1,19 +1,20 @@
 <template>
   <div
     v-if="props.open"
-    class="fixed top-0 left-0 w-full h-full z-10 bg-zinc-800 opacity-70"
+    class="flex items-center justify-center fixed top-0 left-0 w-full h-full z-10 bg-zinc-800/70"
     @click="closeDialog"
-  ></div>
-  <transition name="modal">
-    <dialog
-      open
-      v-if="props.open"
-      class="fixed top-52 w-[26rem] rounded-2xl z-50"
-      :class="props.type"
-    >
-      <slot></slot>
-    </dialog>
-  </transition>
+  >
+    <transition name="modal">
+      <dialog
+        open
+        v-if="props.open"
+        class="w-[26rem] rounded-2xl z-50"
+        :class="props.type"
+      >
+        <slot></slot>
+      </dialog>
+    </transition>
+  </div>
 </template>
 <script setup>
 const props = defineProps({
