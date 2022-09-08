@@ -1,5 +1,8 @@
+<style>
+@import "./App.css";
+</style>
 <template>
-  <div>
+  <main role="main" class="main">
     <TheHeader></TheHeader>
     <BaseContainer
       class="flex flex-col items-center gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
@@ -23,7 +26,7 @@
       </div>
     </BaseContainer>
     <BaseContainer
-      class="grid grid-cols-2 grid-rows-2 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7"
+      class="grid grid-cols-1 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
       <PokemonItem
         v-for="pokemon in pokemonList"
@@ -40,7 +43,7 @@
       </PokemonItem>
       <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
     </BaseContainer>
-  </div>
+  </main>
 </template>
 
 <script setup>
