@@ -30,6 +30,7 @@
         :key="pokemon.name"
         :name="pokemon.name"
         :search="search"
+        :active-types="activeTypes"
       />
       <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
     </BaseContainer>
