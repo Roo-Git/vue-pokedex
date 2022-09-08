@@ -43,14 +43,13 @@ import BaseBadge from "./UI/BaseBadge.vue";
 import BaseButton from "./UI/BaseButton.vue";
 
 const props = defineProps([
-  "id",
-  "img",
-  "dreamImg",
   "name",
+  "img",
   "type",
-  "attacks",
+  "dreamImg",
   "height",
   "weight",
+  "attacks",
 ]);
 const info = ref("More info");
 

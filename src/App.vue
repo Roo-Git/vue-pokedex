@@ -1,6 +1,3 @@
-<style>
-@import "./App.css";
-</style>
 <template>
   <main role="main" class="main">
     <TheHeader></TheHeader>
@@ -28,19 +25,11 @@
     <BaseContainer
       class="grid grid-cols-1 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
-      <PokemonItem
-        v-for="pokemon in pokemonList"
-        :key="pokemon"
-        :id="pokemon.id"
-        :img="pokemon.img"
-        :dream-img="pokemon.dreamImg"
+      <PokemonContainer
+        v-for="pokemon in pokedex"
+        :key="pokemon.name"
         :name="pokemon.name"
-        :type="pokemon.type"
-        :attacks="pokemon.attacks"
-        :height="pokemon.height"
-        :weight="pokemon.weight"
-      >
-      </PokemonItem>
+      />
       <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
     </BaseContainer>
   </main>
@@ -48,14 +37,14 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import axios from "axios";
-import PokemonItem from "./components/PokemonItem.vue";
+import { getPokemon } from "./api";
 import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
 import NotFoundPokemon from "./components/NotFoundPokemon.vue";
 import BaseContainer from "./components/UI/BaseContainer.vue";
 import BaseButton from "./components/UI/BaseButton.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
+import PokemonContainer from "./components/PokemonContainer.vue";
 
 const pokemonName = ref("");
 let activeTypes = ref({
@@ -68,35 +57,35 @@ let activeTypes = ref({
   poison: true,
 });
 
-function filterPokemon() {
-  let pokemon = pokemonName.value;
-  return pokedex.value
-    .filter((p) => p.name.toLowerCase().includes(pokemon.toLowerCase()))
-    .filter((p) => {
-      if (activeTypes.value.grass && p.type.includes("grass")) {
-        return true;
-      }
-      if (activeTypes.value.fire && p.type.includes("fire")) {
-        return true;
-      }
-      if (activeTypes.value.water && p.type.includes("water")) {
-        return true;
-      }
-      if (activeTypes.value.bug && p.type.includes("bug")) {
-        return true;
-      }
-      if (activeTypes.value.normal && p.type.includes("normal")) {
-        return true;
-      }
-      if (activeTypes.value.electric && p.type.includes("electric")) {
-        return true;
-      }
-      if (activeTypes.value.poison && p.type.includes("poison")) {
-        return true;
-      }
-      return false;
-    });
-}
+// function filterPokemon() {
+//   let pokemon = pokemonName.value;
+//   return pokedex.value
+//     .filter((p) => p.name.toLowerCase().includes(pokemon.toLowerCase()))
+//     .filter((p) => {
+//       if (activeTypes.value.grass && p.type.includes("grass")) {
+//         return true;
+//       }
+//       if (activeTypes.value.fire && p.type.includes("fire")) {
+//         return true;
+//       }
+//       if (activeTypes.value.water && p.type.includes("water")) {
+//         return true;
+//       }
+//       if (activeTypes.value.bug && p.type.includes("bug")) {
+//         return true;
+//       }
+//       if (activeTypes.value.normal && p.type.includes("normal")) {
+//         return true;
+//       }
+//       if (activeTypes.value.electric && p.type.includes("electric")) {
+//         return true;
+//       }
+//       if (activeTypes.value.poison && p.type.includes("poison")) {
+//         return true;
+//       }
+//       return false;
+//     });
+// }
 
 function updateSearch(value) {
   pokemonName.value = value;
@@ -106,12 +95,12 @@ function setFilters(updatedFilters) {
   activeTypes.value = updatedFilters;
 }
 
-const pokemonList = computed(() => {
-  return filterPokemon();
-});
+// const pokemonList = computed(() => {
+//   return filterPokemon();
+// });
 
 const NotFound = computed(() => {
-  return pokemonList.value.length === 0;
+  return pokedex.value.length === 0;
 });
 
 const activeComponent = ref(true);
@@ -121,31 +110,13 @@ function changeFilter() {
 }
 
 const pokedex = ref([]);
-const URL_API = ref("https://pokeapi.co/api/v2/pokemon/");
 
-onMounted(() => {
-  for (let id = 1; id <= 151; id++) {
-    axios
-      .get(`${URL_API.value}${id}`)
-      .then((response) => {
-        let pokemon = {
-          id: response.data.id,
-          img: response.data.sprites.front_default,
-          dreamImg: response.data.sprites.other.dream_world.front_default,
-          name: response.data.name.toUpperCase(),
-          type: response.data.types[0].type.name,
-          height: response.data.height,
-          weight: response.data.weight,
-          attacks:
-            response.data.abilities[0].ability.name.charAt(0).toUpperCase() +
-            response.data.abilities[1]?.ability.name.slice(1),
-        };
-        pokedex.value.push(pokemon);
-      })
-      .catch((err) => {
-        const error = new Error(err.message);
-        throw error;
-      });
-  }
+onMounted(async () => {
+  const data = await getPokemon();
+  pokedex.value = data.data.results;
 });
 </script>
+
+<style>
+@import "./App.css";
+</style>
