@@ -14,7 +14,7 @@
 }
 
 @layer components {
-    // APP
+
     .change-filters-btn {
         @apply flex justify-center items-center w-[200px] text-white bg-red-500 rounded mt-2
     }
@@ -33,6 +33,18 @@
     
     .wrapped-pokemon-list {
         @apply grid grid-cols-1 gap-6 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+    }
+
+    .wrapped-header {
+        @apply flex justify-around bg-stone-200 rounded-3xl m-2 p-2
+    }
+
+    .app-title {
+        @apply flex items-center text-red-600 text-3xl font-bold tracking-wide
+    }
+
+    .pokeball-img {
+        @apply flex items-center w-16
     }
 
 }
