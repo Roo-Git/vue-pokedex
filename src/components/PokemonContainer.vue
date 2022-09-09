@@ -28,21 +28,21 @@ const showPokemon = computed(() => {
   const searchMatches = pokemon.value.name
     .toLowerCase()
     .includes(props.search.toLowerCase());
-  const filterMatches =
-    (props.activeTypes.grass &&
-      pokemon.value.types[0].type.name.includes("grass")) ||
-    (props.activeTypes.fire &&
-      pokemon.value.types[0].type.name.includes("fire")) ||
-    (props.activeTypes.water &&
-      pokemon.value.types[0].type.name.includes("water")) ||
-    (props.activeTypes.bug &&
-      pokemon.value.types[0].type.name.includes("bug")) ||
-    (props.activeTypes.normal &&
-      pokemon.value.types[0].type.name.includes("normal")) ||
-    (props.activeTypes.electric &&
-      pokemon.value.types[0].type.name.includes("electric")) ||
-    (props.activeTypes.poison &&
-      pokemon.value.types[0].type.name.includes("poison"));
+
+  const filterMatches = [
+    "grass",
+    "fire",
+    "water",
+    "bug",
+    "normal",
+    "electric",
+    "poison",
+  ].some((filter) => {
+    return (
+      props.activeTypes[filter] &&
+      pokemon.value.types[0].type.name.includes(filter)
+    );
+  });
 
   return searchMatches && filterMatches;
 });
