@@ -1,11 +1,11 @@
 <template>
   <div>
-    <BaseCard :type="type">
+    <BaseCard :type="type" @click="showDialog">
       <img :src="props.img" :alt="props.name" />
       <h2 class="pokemon-card-name">{{ props.name }}</h2>
       <BaseBadge :type="type" :title="type" />
       <div>
-        <BaseButton :type="type" :title="info" @click="showDialog" />
+        <BaseButton :type="type" :title="info" />
       </div>
     </BaseCard>
     <BaseDialog @close="hideDialog" :type="type" :open="dialogIsVisible">
