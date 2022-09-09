@@ -2,7 +2,7 @@
   <PokemonItem
     v-if="showPokemon"
     :key="pokemon.id"
-    :name="pokemon.name"
+    :name="pokemon.name.toUpperCase()"
     :img="pokemon.sprites.front_default"
     :type="pokemon.types[0].type.name"
     :dreamImg="pokemon.sprites.other.dream_world.front_default"
