@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col w-100 justify-around items-center rounded-3xl m-2"
+    class="flex flex-col w-52 justify-around items-center rounded-3xl m-auto"
     :class="props.type"
   >
     <slot></slot>
