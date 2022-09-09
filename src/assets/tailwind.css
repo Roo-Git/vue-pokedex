@@ -16,11 +16,7 @@
 @layer components {
 
     .change-filters-btn {
-        @apply flex justify-center items-center w-[200px] text-white bg-red-500 rounded mt-2
-    }
-
-    .change-filters-btn:hover {
-        @apply bg-red-600 cursor-pointer
+        @apply flex justify-center items-center w-[200px] text-white bg-red-500 rounded mt-2 hover:bg-red-600 cursor-pointer
     }
 
     .wrapped-menu {
@@ -56,7 +52,7 @@
     }
 
     .base-card {
-        @apply flex flex-col w-56 justify-around items-center rounded-3xl m-auto
+        @apply flex flex-col w-60 justify-around items-center rounded-3xl m-auto cursor-pointer opacity-[0.9] transition ease-in-out duration-300 hover:opacity-[1] hover:scale-[1.05]
     }
 
     .base-dialog-external-background {
@@ -64,7 +60,7 @@
     }
 
     .base-dialog {
-        @apply w-[26rem] rounded-2xl z-50
+        @apply w-[26rem] rounded-2xl z-50 
     }
 
     .filters-container {
