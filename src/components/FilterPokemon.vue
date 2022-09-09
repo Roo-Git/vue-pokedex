@@ -1,71 +1,88 @@
 <template>
-  <div class="grid grid-cols-3 grid-rows-4 w-96 p-2">
-    <h2 class="grid col-span-3 text-black-50 font-bold tracking-wide ml-2">
-      Find by Type:
-    </h2>
-    <span>
+  <div class="flex w-full justify-center items-center">
+    <span class="flex items-center mr-2">
       <input
-        class="m-2"
+        class="accent-green-600 cursor-pointer rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         type="checkbox"
         id="grass"
         checked
         @change="setFilter"
       />
-      <label for="grass">Grass</label>
+      <label for="grass" class="ml-1 text-sm font-medium text-gray-900"
+        >Grass</label
+      >
     </span>
-    <span>
+    <span class="flex items-center mr-2">
       <input
-        class="m-2"
+        class="accent-red-600 cursor-pointer rounded focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         type="checkbox"
         id="fire"
         checked
         @change="setFilter"
       />
-      <label for="fire">Fire</label>
+      <label class="ml-1 text-sm font-medium text-gray-900" for="fire"
+        >Fire</label
+      >
     </span>
-    <span>
+    <span class="flex items-center mr-2">
       <input
-        class="m-2"
+        class="accent-blue-600 cursor-pointer rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         type="checkbox"
         id="water"
         checked
         @change="setFilter"
       />
-      <label for="water">Water</label>
+      <label class="ml-1 text-sm font-medium text-gray-900" for="water"
+        >Water</label
+      >
     </span>
-    <span>
-      <input class="m-2" type="checkbox" id="bug" checked @change="setFilter" />
-      <label for="bug">Bug</label>
-    </span>
-    <span>
+    <span class="flex items-center mr-2">
       <input
-        class="m-2"
+        class="accent-lime-600 cursor-pointer rounded focus:ring-lime-500 dark:focus:ring-lime-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        type="checkbox"
+        id="bug"
+        checked
+        @change="setFilter"
+      />
+      <label class="ml-1 text-sm font-medium text-gray-900" for="bug"
+        >Bug</label
+      >
+    </span>
+    <span class="flex items-center mr-2">
+      <input
+        class="accent-orange-600 cursor-pointer rounded focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         type="checkbox"
         id="normal"
         checked
         @change="setFilter"
       />
-      <label for="normal">Normal</label>
+      <label class="ml-1 text-sm font-medium text-gray-900" for="normal"
+        >Normal</label
+      >
     </span>
-    <span>
+    <span class="flex items-center mr-2">
       <input
-        class="m-2"
+        class="accent-yellow-700 cursor-pointer rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         type="checkbox"
         id="electric"
         checked
         @change="setFilter"
       />
-      <label for="electric">Electric</label>
+      <label class="ml-1 text-sm font-medium text-gray-900" for="electric"
+        >Electric</label
+      >
     </span>
-    <span>
+    <span class="flex items-center mr-2">
       <input
-        class="m-2"
+        class="accent-purple-600 cursor-pointer rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         type="checkbox"
         id="poison"
         checked
         @change="setFilter"
       />
-      <label for="poison">Poison</label>
+      <label class="ml-1 text-sm font-medium text-gray-900" for="poison"
+        >Poison</label
+      >
     </span>
   </div>
 </template>
