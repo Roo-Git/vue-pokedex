@@ -1,7 +1,7 @@
 <template>
   <main role="main" class="main">
     <TheHeader></TheHeader>
-    <BaseContainer
+    <BaseWrapper
       class="flex flex-col items-center gap-6 w-100 bg-stone-200 rounded-3xl m-2 p-10"
     >
       <BaseButton
@@ -21,8 +21,8 @@
           v-show="activeComponent === false"
         ></FilterPokemon>
       </div>
-    </BaseContainer>
-    <BaseContainer
+    </BaseWrapper>
+    <BaseWrapper
       class="grid grid-cols-1 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
       <PokemonContainer
@@ -33,7 +33,7 @@
         :active-types="activeTypes"
       />
       <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
-    </BaseContainer>
+    </BaseWrapper>
   </main>
 </template>
 
@@ -43,7 +43,7 @@ import { getPokemon } from "./api";
 import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
 import NotFoundPokemon from "./components/NotFoundPokemon.vue";
-import BaseContainer from "./components/UI/BaseContainer.vue";
+import BaseWrapper from "./components/UI/BaseWrapper.vue";
 import BaseButton from "./components/UI/BaseButton.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
 import PokemonContainer from "./components/PokemonContainer.vue";
