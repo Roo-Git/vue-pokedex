@@ -1,30 +1,25 @@
 <template>
-  <main role="main" class="main">
-    <TheHeader></TheHeader>
-    <BaseWrapper
-      class="flex flex-col items-center w-100 bg-stone-200 rounded-3xl m-2 p-2"
-    >
+  <main role="main">
+    <TheHeader />
+    <BaseWrapper class="wrapped-menu">
       <BaseButton
         @click="changeFilter"
-        class="flex justify-center items-center w-[200px] text-white bg-red-500 rounded hover:bg-red-600 cursor-pointer mt-2"
-      >
-        Change Filter
-      </BaseButton>
-      <div class="flex justify-center items-center w-full h-14">
+        class="change-filters-btn"
+        :title="'Change Filter'"
+      />
+      <div class="centered-menu">
         <SearchPokemon
           @search="updateSearch"
           :search-name="search"
           v-show="activeComponent === true"
-        ></SearchPokemon>
+        />
         <FilterPokemon
           @change-filter="setFilters"
           v-show="activeComponent === false"
-        ></FilterPokemon>
+        />
       </div>
     </BaseWrapper>
-    <BaseWrapper
-      class="grid grid-cols-1 gap-6 w-100 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-    >
+    <BaseWrapper class="wrapped-pokemon-list">
       <PokemonContainer
         v-for="pokemon in pokedex"
         :key="pokemon.name"
@@ -78,7 +73,3 @@ onMounted(async () => {
   pokedex.value = data.data.results;
 });
 </script>
-
-<style>
-@import "./App.css";
-</style>

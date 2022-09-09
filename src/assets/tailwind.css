@@ -3,3 +3,36 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+
+@layer base {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@layer components {
+    // APP
+    .change-filters-btn {
+        @apply flex justify-center items-center w-[200px] text-white bg-red-500 rounded mt-2
+    }
+
+    .change-filters-btn:hover {
+        @apply bg-red-600 cursor-pointer
+    }
+
+    .wrapped-menu {
+        @apply flex flex-col items-center bg-stone-200 rounded-3xl m-2 p-2
+    }
+
+    .centered-menu {
+        @apply flex justify-center items-center w-full h-14
+    }
+    
+    .wrapped-pokemon-list {
+        @apply grid grid-cols-1 gap-6 bg-stone-100 rounded-3xl m-2 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+    }
+
+}
