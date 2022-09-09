@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="flex flex-col w-52 justify-around items-center rounded-3xl m-auto"
-    :class="props.type"
-  >
+  <div class="base-card" :class="props.type">
     <slot></slot>
   </div>
 </template>

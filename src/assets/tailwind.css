@@ -47,4 +47,87 @@
         @apply flex items-center w-16
     }
 
+    .base-badge {
+        @apply flex w-20 justify-center rounded-2xl text-neutral-50 my-2
+    }
+
+    .base-btn {
+        @apply flex w-40 justify-center items-center text-neutral-50 font-bold rounded-2xl my-2 cursor-pointer
+    }
+
+    .base-card {
+        @apply flex flex-col w-52 justify-around items-center rounded-3xl m-auto
+    }
+
+    .base-dialog-external-background {
+        @apply flex items-center justify-center fixed top-0 left-0 w-full h-full z-10 bg-zinc-800/70
+    }
+
+    .base-dialog {
+        @apply w-[26rem] rounded-2xl z-50
+    }
+
+    .filters-container {
+        @apply flex w-full justify-center items-center
+    }
+
+    .checkbox-label-container {
+        @apply flex items-center mr-2
+    }
+
+    .green-checkbox {
+        @apply accent-green-600 cursor-pointer rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .red-checkbox {
+        @apply accent-red-600 cursor-pointer rounded focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .blue-checkbox {
+        @apply accent-blue-600 cursor-pointer rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .lime-checkbox {
+        @apply accent-lime-600 cursor-pointer rounded focus:ring-lime-500 dark:focus:ring-lime-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .orange-checkbox {
+        @apply accent-orange-600 cursor-pointer rounded focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .yellow-checkbox {
+        @apply accent-yellow-700 cursor-pointer rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .purple-checkbox {
+        @apply accent-purple-600 cursor-pointer rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .filter-label {
+        @apply ml-1 text-sm font-medium text-gray-900
+    }
+
+    .search-placeholder {
+        @apply placeholder:uppercase w-[320px] px-20 py-1 rounded outline-none
+    }
+
+    .pokemon-card-name {
+        @apply font-bold text-neutral-50
+    }
+
+    .dialog-card-container {
+        @apply flex flex-col justify-around items-center h-[40rem]
+    }
+
+    .pokemon-dialog-name {
+        @apply text-neutral-50 text-3xl font-bold tracking-wide
+    }
+
+    .pokemon-data {
+        @apply text-neutral-50 text-2xl font-medium
+    }
+
+    .close-dialog-btn {
+        @apply flex items-center justify-center border-neutral-50 border-4 w-full rounded-2xl text-xl cursor-pointer
+    }
 }

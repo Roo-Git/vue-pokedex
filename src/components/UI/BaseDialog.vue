@@ -1,16 +1,11 @@
 <template>
   <div
     v-if="props.open"
-    class="flex items-center justify-center fixed top-0 left-0 w-full h-full z-10 bg-zinc-800/70"
+    class="base-dialog-external-background"
     @click="closeDialog"
   >
     <transition name="modal">
-      <dialog
-        open
-        v-if="props.open"
-        class="w-[26rem] rounded-2xl z-50"
-        :class="props.type"
-      >
+      <dialog open v-if="props.open" class="base-dialog" :class="props.type">
         <slot></slot>
       </dialog>
     </transition>

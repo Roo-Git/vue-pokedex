@@ -1,9 +1,6 @@
 <template>
   <div>
-    <button
-      class="flex w-40 justify-center items-center text-neutral-50 font-bold rounded-2xl my-2 cursor-pointer"
-      :class="props.type"
-    >
+    <button class="base-btn" :class="props.type">
       <slot> {{ text }} </slot>
     </button>
   </div>

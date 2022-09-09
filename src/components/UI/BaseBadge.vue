@@ -1,10 +1,6 @@
 <template>
   <div>
-    <span
-      class="flex w-20 justify-center rounded-2xl text-neutral-50 my-2"
-      :class="props.type"
-      >{{ text }}
-    </span>
+    <span class="base-badge" :class="props.type">{{ text }} </span>
   </div>
 </template>
 
