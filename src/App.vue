@@ -32,17 +32,15 @@
         :search="search"
         :active-types="activeTypes"
       />
-      <NotFoundPokemon v-show="NotFound"></NotFoundPokemon>
     </BaseWrapper>
   </main>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { getPokemon } from "./api";
 import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
-import NotFoundPokemon from "./components/NotFoundPokemon.vue";
 import BaseWrapper from "./components/UI/BaseWrapper.vue";
 import BaseButton from "./components/UI/BaseButton.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
@@ -74,10 +72,6 @@ function changeFilter() {
 }
 
 const pokedex = ref([]);
-
-const NotFound = computed(() => {
-  return search.value.length === 0;
-});
 
 onMounted(async () => {
   const data = await getPokemon();
