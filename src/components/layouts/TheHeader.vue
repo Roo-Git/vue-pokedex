@@ -9,7 +9,7 @@
       <img
         src="../../assets/img/pokeball.svg"
         alt="pokeball"
-        class="flex items-center w-24"
+        class="flex items-center w-16"
       />
     </BaseWrapper>
   </div>
