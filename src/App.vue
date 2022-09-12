@@ -42,7 +42,7 @@ import TheHeader from "./components/layouts/TheHeader.vue";
 import PokemonContainer from "./components/PokemonContainer.vue";
 
 const search = ref("");
-let activeTypes = ref({
+const activeTypes = ref({
   grass: true,
   fire: true,
   water: true,
