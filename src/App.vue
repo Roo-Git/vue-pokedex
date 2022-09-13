@@ -43,16 +43,7 @@ import PokemonContainer from "./components/PokemonContainer.vue";
 
 const search = ref<string>("");
 
-interface PokemonTypes {
-  grass: boolean;
-  fire: boolean;
-  water: boolean;
-  bug: boolean;
-  normal: boolean;
-  electric: boolean;
-  poison: boolean;
-}
-const activeTypes = ref<PokemonTypes>({
+const activeTypes = ref<boolean | unknown>({
   grass: true,
   fire: true,
   water: true,
@@ -62,23 +53,22 @@ const activeTypes = ref<PokemonTypes>({
   poison: true,
 });
 
-function updateSearch(value: string) {
-  search.value = value;
+function updateSearch(value: string): string {
+  return (search.value = value as string);
 }
-
-function setFilters(updatedFilters: boolean) {
-  activeTypes.value = updatedFilters;
+function setFilters(updatedFilters: boolean): boolean {
+  return (activeTypes.value = updatedFilters as boolean);
 }
 
 const activeComponent = ref<boolean>(true);
 
-function changeFilter() {
-  activeComponent.value = !activeComponent.value;
+function changeFilter(): boolean {
+  return (activeComponent.value = !activeComponent.value as boolean);
 }
 
-const pokedex = ref<[]>([]);
+const pokedex = ref<[] | any>([]);
 
-onMounted(async () => {
+onMounted(async (): Promise<void> => {
   const data = await getPokemons();
   pokedex.value = data.data.results;
 });
