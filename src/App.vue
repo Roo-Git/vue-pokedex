@@ -31,9 +31,9 @@
   </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { getPokemon } from "./api";
+import { getPokemons } from "./api";
 import SearchPokemon from "./components/SearchPokemon.vue";
 import FilterPokemon from "./components/FilterPokemon.vue";
 import BaseWrapper from "./components/UI/BaseWrapper.vue";
@@ -41,8 +41,18 @@ import BaseButton from "./components/UI/BaseButton.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
 import PokemonContainer from "./components/PokemonContainer.vue";
 
-const search = ref("");
-const activeTypes = ref({
+const search = ref<string>("");
+
+interface PokemonTypes {
+  grass: boolean;
+  fire: boolean;
+  water: boolean;
+  bug: boolean;
+  normal: boolean;
+  electric: boolean;
+  poison: boolean;
+}
+const activeTypes = ref<PokemonTypes>({
   grass: true,
   fire: true,
   water: true,
@@ -52,24 +62,24 @@ const activeTypes = ref({
   poison: true,
 });
 
-function updateSearch(value) {
+function updateSearch(value: string) {
   search.value = value;
 }
 
-function setFilters(updatedFilters) {
+function setFilters(updatedFilters: boolean) {
   activeTypes.value = updatedFilters;
 }
 
-const activeComponent = ref(true);
+const activeComponent = ref<boolean>(true);
 
 function changeFilter() {
   activeComponent.value = !activeComponent.value;
 }
 
-const pokedex = ref([]);
+const pokedex = ref<[]>([]);
 
 onMounted(async () => {
-  const data = await getPokemon();
+  const data = await getPokemons();
   pokedex.value = data.data.results;
 });
 </script>
