@@ -75,9 +75,10 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
+import { ActiveTypesType } from "../types";
 
 const emit = defineEmits<{
-  (event: "change-filter", updatedFilters: unknown | boolean): void;
+  (event: "change-filter", updatedFilters: ActiveTypesType): void;
 }>();
 
 interface PokemonTypes {

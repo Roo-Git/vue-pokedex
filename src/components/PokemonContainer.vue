@@ -16,13 +16,14 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import { getPokemonByName } from "../api";
+import type { ActiveTypesType } from "../types";
 import PokemonItem from "./PokemonItem.vue";
 const pokemon = ref<null | any>(null);
 
 const props = defineProps<{
   name: string;
   search: string;
-  activeTypes: string;
+  activeTypes: ActiveTypesType;
 }>();
 
 const showPokemon = computed<string>(() => {

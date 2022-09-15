@@ -21,3 +21,13 @@ type PokemonType = {
 type PokemonAbility = {
   ability: { name: string };
 };
+
+export type ActiveTypesType = {
+  grass: boolean;
+  fire: boolean;
+  water: boolean;
+  bug: boolean;
+  normal: boolean;
+  electric: boolean;
+  poison: boolean;
+};
