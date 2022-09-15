@@ -4,16 +4,23 @@
       class="search-placeholder"
       type="search"
       @input="search"
-      :value="searchName"
+      :value="props.searchName"
       placeholder="Search pokemon"
     />
   </div>
 </template>
 
-<script setup>
-defineProps(["searchName"]);
-const emit = defineEmits(["search"]);
-function search(event) {
+<script setup lang="ts">
+interface Props {
+  searchName: string;
+}
+const props = defineProps<Props>();
+
+const emit = defineEmits<{
+  (event: "search", value: string): void;
+}>();
+
+function search(event: any) {
   emit("search", event.target.value);
 }
 </script>
