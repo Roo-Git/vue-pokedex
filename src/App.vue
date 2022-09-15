@@ -6,6 +6,7 @@
         @click="changeFilter"
         class="change-filters-btn"
         :title="'Change Filter'"
+        :type="'undefined'"
       />
       <div class="centered-menu">
         <SearchPokemon
