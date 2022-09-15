@@ -12,10 +12,10 @@
   </div>
 </template>
 <script setup lang="ts">
-interface Props {
+type Props = {
   open: { type: boolean; required: true };
   type: string;
-}
+};
 
 const props = defineProps<Props>();
 

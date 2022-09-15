@@ -5,7 +5,7 @@
       <h2 class="pokemon-card-name">{{ props.name }}</h2>
       <BaseBadge :type="type" :title="type" />
       <div>
-        <BaseButton :type="type" :title="info" />
+        <BaseButton :type="type" :title="'More info'" />
       </div>
     </BaseCard>
     <BaseDialog @close="hideDialog" :type="type" :open="dialogIsVisible">
@@ -21,7 +21,7 @@
         <BaseButton
           @click="hideDialog"
           class="close-dialog-btn"
-          :title="closeBtn"
+          :title="'Close'"
           :type="'undefined'"
         />
       </div>
@@ -45,9 +45,6 @@ type Props = {
 };
 
 const props = defineProps<Props>();
-
-const info = ref<string>("More info");
-const closeBtn = ref<string>("Close");
 
 const dialogIsVisible = ref<boolean>(false);
 

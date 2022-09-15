@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+type Props = {
   type: string;
-}
+};
 
 const props = defineProps<Props>();
 </script>

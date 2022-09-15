@@ -7,10 +7,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-interface Props {
+type Props = {
   type: string;
   title: string;
-}
+};
 
 const props = defineProps<Props>();
 
