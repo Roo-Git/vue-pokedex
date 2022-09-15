@@ -22,7 +22,6 @@
           @click="hideDialog"
           class="close-dialog-btn"
           :title="'Close'"
-          :type="'undefined'"
         />
       </div>
     </BaseDialog>

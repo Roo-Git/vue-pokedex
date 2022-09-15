@@ -10,7 +10,7 @@
 import { computed } from "vue";
 
 type Props = {
-  type: string;
+  type?: string;
   title: string;
 };
 

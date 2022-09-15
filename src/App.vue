@@ -6,18 +6,14 @@
         @click="changeFilter"
         class="change-filters-btn"
         :title="'Change Filter'"
-        :type="'undefined'"
       />
       <div class="centered-menu">
         <SearchPokemon
           @search="updateSearch"
           :search-name="search"
-          v-show="activeComponent === true"
+          v-show="activeComponent"
         />
-        <FilterPokemon
-          @change-filter="setFilters"
-          v-show="activeComponent === false"
-        />
+        <FilterPokemon @change-filter="setFilters" v-show="!activeComponent" />
       </div>
     </BaseWrapper>
     <BaseWrapper class="wrapped-pokemon-list">
