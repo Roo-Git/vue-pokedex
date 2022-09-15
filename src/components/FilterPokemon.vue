@@ -73,11 +73,23 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive } from "vue";
 
-const emit = defineEmits(["change-filter"]);
-let filters = reactive({
+const emit = defineEmits<{
+  (event: "change-filter", updatedFilters: boolean | any): void;
+}>();
+
+interface PokemonTypes {
+  grass: boolean;
+  fire: boolean;
+  water: boolean;
+  bug: boolean;
+  normal: boolean;
+  electric: boolean;
+  poison: boolean;
+}
+let filters: PokemonTypes = reactive({
   grass: true,
   fire: true,
   water: true,
@@ -87,7 +99,7 @@ let filters = reactive({
   poison: true,
 });
 
-function setFilter(event) {
+function setFilter(event: boolean | any) {
   const inputId = event.target.id;
   const isActive = event.target.checked;
   const updatedFilters = {

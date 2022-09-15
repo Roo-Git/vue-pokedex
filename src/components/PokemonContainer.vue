@@ -13,14 +13,19 @@
   </PokemonItem>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import { getPokemonByName } from "../api";
 import PokemonItem from "./PokemonItem.vue";
-const pokemon = ref(null);
-const props = defineProps(["name", "search", "activeTypes"]);
+const pokemon = ref<null | any>(null);
 
-const showPokemon = computed(() => {
+const props = defineProps<{
+  name: string;
+  search: string;
+  activeTypes: string;
+}>();
+
+const showPokemon = computed<string>(() => {
   if (!pokemon.value) {
     return false;
   }

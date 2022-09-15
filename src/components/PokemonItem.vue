@@ -22,36 +22,40 @@
           @click="hideDialog"
           class="close-dialog-btn"
           :title="closeBtn"
+          :type="'undefined'"
         />
       </div>
     </BaseDialog>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import BaseBadge from "./UI/BaseBadge.vue";
 import BaseButton from "./UI/BaseButton.vue";
 
-const props = defineProps([
-  "name",
-  "img",
-  "type",
-  "dreamImg",
-  "height",
-  "weight",
-  "attacks",
-]);
-const info = ref("More info");
-const closeBtn = ref("Close");
-
-let dialogIsVisible = ref(false);
-
-function showDialog() {
-  dialogIsVisible.value = true;
+interface Props {
+  name: string;
+  img: string;
+  type: string;
+  dreamImg: string;
+  height: number;
+  weight: number;
+  attacks: string;
 }
 
-function hideDialog() {
-  dialogIsVisible.value = false;
+const props = defineProps<Props>();
+
+const info = ref<string>("More info");
+const closeBtn = ref<string>("Close");
+
+const dialogIsVisible = ref<boolean>(false);
+
+function showDialog(): boolean {
+  return (dialogIsVisible.value = true);
+}
+
+function hideDialog(): boolean {
+  return (dialogIsVisible.value = false);
 }
 </script>
