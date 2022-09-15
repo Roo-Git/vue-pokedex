@@ -1,6 +1,6 @@
 <template>
   <PokemonItem
-    v-if="showPokemon"
+    v-if="pokemon !== null && showPokemon"
     :key="pokemon.id"
     :name="pokemon.name.toUpperCase()"
     :img="pokemon.sprites.front_default"
@@ -16,9 +16,10 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import { getPokemonByName } from "../api";
-import type { ActiveTypesType } from "../types";
+import type { ActiveTypesType, Pokemon } from "../types";
 import PokemonItem from "./PokemonItem.vue";
-const pokemon = ref<null | any>(null);
+
+const pokemon = ref<Pokemon | null>(null);
 
 const props = defineProps<{
   name: string;
@@ -26,7 +27,7 @@ const props = defineProps<{
   activeTypes: ActiveTypesType;
 }>();
 
-const showPokemon = computed<string>(() => {
+const showPokemon = computed<boolean>(() => {
   if (!pokemon.value) {
     return false;
   }
@@ -46,7 +47,7 @@ const showPokemon = computed<string>(() => {
   ].some((filter) => {
     return (
       props.activeTypes[filter] &&
-      pokemon.value.types[0].type.name.includes(filter)
+      pokemon.value?.types[0].type.name.includes(filter)
     );
   });
 
