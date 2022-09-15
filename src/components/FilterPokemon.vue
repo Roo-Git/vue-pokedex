@@ -81,16 +81,7 @@ const emit = defineEmits<{
   (event: "change-filter", updatedFilters: ActiveTypesType): void;
 }>();
 
-interface PokemonTypes {
-  grass: boolean;
-  fire: boolean;
-  water: boolean;
-  bug: boolean;
-  normal: boolean;
-  electric: boolean;
-  poison: boolean;
-}
-let filters: PokemonTypes = reactive({
+let filters = reactive<ActiveTypesType>({
   grass: true,
   fire: true,
   water: true,
