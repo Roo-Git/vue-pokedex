@@ -34,7 +34,7 @@ import { ref } from "vue";
 import BaseBadge from "./UI/BaseBadge.vue";
 import BaseButton from "./UI/BaseButton.vue";
 
-interface Props {
+type Props = {
   name: string;
   img: string;
   type: string;
@@ -42,7 +42,7 @@ interface Props {
   height: number;
   weight: number;
   attacks: string;
-}
+};
 
 const props = defineProps<Props>();
 
@@ -51,11 +51,11 @@ const closeBtn = ref<string>("Close");
 
 const dialogIsVisible = ref<boolean>(false);
 
-function showDialog(): boolean {
-  return (dialogIsVisible.value = true);
+function showDialog(): void {
+  dialogIsVisible.value = true;
 }
 
-function hideDialog(): boolean {
-  return (dialogIsVisible.value = false);
+function hideDialog(): void {
+  dialogIsVisible.value = false;
 }
 </script>
