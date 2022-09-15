@@ -6,11 +6,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
-const props = defineProps(["type", "title"]);
 
-let text = computed(() => {
+interface Props {
+  type: string;
+  title: string;
+}
+
+const props = defineProps<Props>();
+
+const text = computed<string>(() => {
   return props.title.toUpperCase();
 });
 </script>
