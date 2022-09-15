@@ -4,8 +4,12 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps(["type"]);
+<script setup lang="ts">
+interface Props {
+  type: string;
+}
+
+const props = defineProps<Props>();
 </script>
 
 <style scoped>

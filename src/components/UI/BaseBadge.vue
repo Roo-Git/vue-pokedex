@@ -13,6 +13,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
 const text = computed<string>(() => {
   return props.title.toUpperCase();
 });
