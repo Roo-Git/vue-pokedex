@@ -13,7 +13,7 @@
 </template>
 <script setup lang="ts">
 type Props = {
-  open: { type: boolean; required: true };
+  open: boolean;
   type: string;
 };
 
