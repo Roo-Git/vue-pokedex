@@ -77,7 +77,7 @@
 import { reactive } from "vue";
 
 const emit = defineEmits<{
-  (event: "change-filter", updatedFilters: boolean | any): void;
+  (event: "change-filter", updatedFilters: unknown | boolean): void;
 }>();
 
 interface PokemonTypes {
@@ -99,9 +99,9 @@ let filters: PokemonTypes = reactive({
   poison: true,
 });
 
-function setFilter(event: boolean | any) {
-  const inputId = event.target.id;
-  const isActive = event.target.checked;
+function setFilter(event: Event) {
+  const inputId = (event.target as HTMLInputElement).id;
+  const isActive = (event.target as HTMLInputElement).checked;
   const updatedFilters = {
     ...filters,
     [inputId]: isActive,

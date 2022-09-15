@@ -20,7 +20,7 @@ const emit = defineEmits<{
   (event: "search", value: string): void;
 }>();
 
-function search(event: any) {
-  emit("search", event.target.value);
+function search(event: Event) {
+  emit("search", (event.target as HTMLInputElement).value);
 }
 </script>
