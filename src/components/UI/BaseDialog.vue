@@ -11,18 +11,17 @@
     </transition>
   </div>
 </template>
-<script setup>
-const props = defineProps({
-  open: {
-    type: Boolean,
-    required: true,
-  },
-  type: {
-    type: String,
-  },
-});
+<script setup lang="ts">
+interface Props {
+  open: { type: boolean; required: true };
+  type: string;
+}
 
-const emit = defineEmits(["close"]);
+const props = defineProps<Props>();
+
+const emit = defineEmits<{
+  (e: "close"): void;
+}>();
 
 function closeDialog() {
   emit("close");
