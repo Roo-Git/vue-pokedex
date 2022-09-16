@@ -6,7 +6,7 @@ const URL_API = "https://pokeapi.co/api/v2";
 type GetPokemonsResponse = { data: { results: Pokemon[] } };
 
 export const getPokemons = (): Promise<GetPokemonsResponse> => {
-  return axios.get(`${URL_API}/pokemon?limit=20&offset=0`);
+  return axios.get(`${URL_API}/pokemon?limit=151&offset=0`);
 };
 
 type GetPokemonByNameResponse = {
