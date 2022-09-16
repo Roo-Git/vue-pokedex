@@ -46,4 +46,7 @@ const props = defineProps<Props>();
 .fighting {
   background-color: #a1a1aa;
 }
+.ground {
+  background-color: #92400e;
+}
 </style>

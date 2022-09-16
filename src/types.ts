@@ -33,4 +33,5 @@ export type ActiveTypesType = {
   rock: boolean;
   ghost: boolean;
   fighting: boolean;
+  ground: boolean;
 };

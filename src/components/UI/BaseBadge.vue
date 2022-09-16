@@ -53,4 +53,8 @@ const text = computed<string>(() => {
 .fighting {
   background-color: #d1d5db;
 }
+
+.ground {
+  background-color: #b45309;
+}
 </style>
