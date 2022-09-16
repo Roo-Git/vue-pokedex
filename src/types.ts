@@ -35,4 +35,5 @@ export type ActiveTypesType = {
   fighting: boolean;
   ground: boolean;
   dragon: boolean;
+  ice: boolean;
 };

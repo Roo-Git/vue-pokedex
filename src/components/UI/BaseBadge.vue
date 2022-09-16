@@ -61,4 +61,7 @@ const text = computed<string>(() => {
 .dragon {
   background-color: #a5b4fc;
 }
+.ice {
+  background-color: #7dd3fc;
+}
 </style>

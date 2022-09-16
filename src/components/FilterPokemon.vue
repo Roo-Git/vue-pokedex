@@ -111,8 +111,24 @@
       <label class="filter-label" for="ground">Ground</label>
     </span>
     <span class="checkbox-label-container">
-      <input class="" type="checkbox" id="dragon" checked @change="setFilter" />
+      <input
+        class="indigo-checkbox"
+        type="checkbox"
+        id="dragon"
+        checked
+        @change="setFilter"
+      />
       <label class="filter-label" for="dragon">Dragon</label>
+    </span>
+    <span class="checkbox-label-container">
+      <input
+        class="sky-checkbox"
+        type="checkbox"
+        id="ice"
+        checked
+        @change="setFilter"
+      />
+      <label class="filter-label" for="ice">Ice</label>
     </span>
   </div>
 </template>
@@ -138,6 +154,7 @@ let filters = reactive<ActiveTypesType>({
   fighting: true,
   ground: true,
   dragon: true,
+  ice: true,
 });
 
 function setFilter(event: Event) {

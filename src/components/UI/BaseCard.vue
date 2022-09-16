@@ -52,4 +52,7 @@ const props = defineProps<Props>();
 .dragon {
   background-color: #818cf8;
 }
+.ice {
+  background-color: #38bdf8;
+}
 </style>
