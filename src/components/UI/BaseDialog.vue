@@ -72,4 +72,8 @@ function closeDialog() {
 .poison {
   background-color: #d8b4fe;
 }
+
+.rock {
+  background-color: #a8a29e;
+}
 </style>

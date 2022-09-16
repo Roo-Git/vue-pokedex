@@ -49,6 +49,7 @@ const activeTypes = ref<ActiveTypesType>({
   normal: true,
   electric: true,
   poison: true,
+  rock: true,
 });
 
 function updateSearch(value: string): void {

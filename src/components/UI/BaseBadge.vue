@@ -43,4 +43,8 @@ const text = computed<string>(() => {
 .poison {
   background-color: #d8b4fe;
 }
+
+.rock {
+  background-color: #d6d3d1;
+}
 </style>

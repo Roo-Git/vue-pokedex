@@ -36,4 +36,8 @@ const props = defineProps<Props>();
 .poison {
   background-color: #e879f9;
 }
+
+.rock {
+  background-color: #a8a29e;
+}
 </style>
