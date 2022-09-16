@@ -40,4 +40,7 @@ const props = defineProps<Props>();
 .rock {
   background-color: #a8a29e;
 }
+.ghost {
+  background-color: #a78bfa;
+}
 </style>

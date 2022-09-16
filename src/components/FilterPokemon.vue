@@ -80,6 +80,16 @@
       />
       <label class="filter-label" for="rock">Rock</label>
     </span>
+    <span class="checkbox-label-container">
+      <input
+        class="violet-checkbox"
+        type="checkbox"
+        id="ghost"
+        checked
+        @change="setFilter"
+      />
+      <label class="filter-label" for="ghost">Ghost</label>
+    </span>
   </div>
 </template>
 
@@ -100,6 +110,7 @@ let filters = reactive<ActiveTypesType>({
   electric: true,
   poison: true,
   rock: true,
+  ghost: true,
 });
 
 function setFilter(event: Event) {

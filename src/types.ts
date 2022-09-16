@@ -31,4 +31,5 @@ export type ActiveTypesType = {
   electric: boolean;
   poison: boolean;
   rock: boolean;
+  ghost: boolean;
 };

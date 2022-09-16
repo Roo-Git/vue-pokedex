@@ -47,4 +47,7 @@ const text = computed<string>(() => {
 .rock {
   background-color: #d6d3d1;
 }
+.ghost {
+  background-color: #c4b5fd;
+}
 </style>
