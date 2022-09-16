@@ -44,7 +44,7 @@
     }
 
     .base-badge {
-        @apply flex w-20 justify-center rounded-2xl text-neutral-50 my-2
+        @apply flex w-28 justify-center rounded-2xl text-neutral-50 my-2
     }
 
     .base-btn {
