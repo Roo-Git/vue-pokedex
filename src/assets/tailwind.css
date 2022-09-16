@@ -60,7 +60,7 @@
     }
 
     .base-dialog {
-        @apply w-[26rem] rounded-2xl z-50 
+        @apply w-[23rem] rounded-2xl z-50 
     }
 
     .filters-container {
@@ -124,6 +124,6 @@
     }
 
     .close-dialog-btn {
-        @apply flex items-center justify-center border-neutral-50 border-4 w-full rounded-2xl text-xl cursor-pointer
+        @apply flex items-center justify-center border-neutral-50 border-4 w-64 rounded-2xl text-xl cursor-pointer
     }
 }
