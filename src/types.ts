@@ -36,4 +36,5 @@ export type ActiveTypesType = {
   ground: boolean;
   dragon: boolean;
   ice: boolean;
+  psychic: boolean;
 };

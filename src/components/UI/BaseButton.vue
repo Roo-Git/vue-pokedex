@@ -71,4 +71,7 @@ const text = computed<string>(() => {
 .ice {
   background-color: #7dd3fc;
 }
+.psychic {
+  background-color: #f0abfc;
+}
 </style>

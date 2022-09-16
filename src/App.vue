@@ -55,6 +55,7 @@ const activeTypes = ref<ActiveTypesType>({
   ground: true,
   dragon: true,
   ice: true,
+  psychic: true,
 });
 
 function updateSearch(value: string): void {

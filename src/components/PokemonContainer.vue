@@ -50,6 +50,7 @@ const showPokemon = computed<boolean>(() => {
     "ground",
     "dragon",
     "ice",
+    "psychic",
   ].some((filter) => {
     return (
       props.activeTypes[filter] &&

@@ -130,6 +130,16 @@
       />
       <label class="filter-label" for="ice">Ice</label>
     </span>
+    <span class="checkbox-label-container">
+      <input
+        class="fuchsia-checkbox"
+        type="checkbox"
+        id="psychic"
+        checked
+        @change="setFilter"
+      />
+      <label class="filter-label" for="psychic">Psychic</label>
+    </span>
   </div>
 </template>
 
@@ -155,6 +165,7 @@ let filters = reactive<ActiveTypesType>({
   ground: true,
   dragon: true,
   ice: true,
+  psychic: true,
 });
 
 function setFilter(event: Event) {

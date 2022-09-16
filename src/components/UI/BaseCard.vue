@@ -55,4 +55,7 @@ const props = defineProps<Props>();
 .ice {
   background-color: #38bdf8;
 }
+.psychic {
+  background-color: #e879f9;
+}
 </style>
