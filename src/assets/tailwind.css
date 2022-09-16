@@ -16,7 +16,7 @@
 @layer components {
 
     .change-filters-btn {
-        @apply flex justify-center items-center w-[200px] text-white bg-red-500 rounded mt-2 hover:bg-red-600 cursor-pointer
+        @apply flex justify-center items-center w-[200px] text-white bg-red-500 rounded hover:bg-red-600 cursor-pointer mt-2
     }
 
     .wrapped-menu {
@@ -24,7 +24,7 @@
     }
 
     .centered-menu {
-        @apply flex justify-center items-center w-full h-14
+        @apply flex justify-center items-center w-full h-24
     }
     
     .wrapped-pokemon-list {
@@ -64,7 +64,7 @@
     }
 
     .filters-container {
-        @apply flex w-full justify-center items-center
+        @apply grid grid-cols-5 grid-rows-3 w-[600px] gap-2
     }
 
     .checkbox-label-container {
