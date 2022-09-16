@@ -53,6 +53,7 @@ const activeTypes = ref<ActiveTypesType>({
   ghost: true,
   fighting: true,
   ground: true,
+  dragon: true,
 });
 
 function updateSearch(value: string): void {

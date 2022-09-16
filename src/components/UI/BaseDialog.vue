@@ -85,4 +85,7 @@ function closeDialog() {
 .ground {
   background-color: #92400e;
 }
+.dragon {
+  background-color: #818cf8;
+}
 </style>
