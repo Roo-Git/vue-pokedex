@@ -1,7 +1,7 @@
 <template>
   <div>
     <BaseWrapper class="wrapped-header">
-      <h1 class="app-title">POKEDEX APP</h1>
+      <h1 class="app-title">POKÉDEX APP</h1>
       <img
         src="../../assets/img/pokeball.svg"
         alt="pokeball"
