@@ -79,4 +79,7 @@ function closeDialog() {
 .ghost {
   background-color: #a78bfa;
 }
+.fighting {
+  background-color: #a1a1aa;
+}
 </style>

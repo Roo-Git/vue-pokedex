@@ -90,6 +90,16 @@
       />
       <label class="filter-label" for="ghost">Ghost</label>
     </span>
+    <span class="checkbox-label-container">
+      <input
+        class="zinc-checkbox"
+        type="checkbox"
+        id="fighting"
+        checked
+        @change="setFilter"
+      />
+      <label class="filter-label" for="fighting">Fighting</label>
+    </span>
   </div>
 </template>
 
@@ -111,6 +121,7 @@ let filters = reactive<ActiveTypesType>({
   poison: true,
   rock: true,
   ghost: true,
+  fighting: true,
 });
 
 function setFilter(event: Event) {

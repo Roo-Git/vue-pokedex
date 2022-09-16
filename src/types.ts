@@ -32,4 +32,5 @@ export type ActiveTypesType = {
   poison: boolean;
   rock: boolean;
   ghost: boolean;
+  fighting: boolean;
 };

@@ -50,4 +50,7 @@ const text = computed<string>(() => {
 .ghost {
   background-color: #c4b5fd;
 }
+.fighting {
+  background-color: #d1d5db;
+}
 </style>
